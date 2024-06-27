@@ -8,6 +8,8 @@
 
 int main(){
     sudoku test("sudoku.txt");
-    std::cout << test;
+    test.print();
+    test.solveSudoku();
+    test.print();
     return 0;
 }
