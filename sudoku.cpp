@@ -7,23 +7,10 @@
 sudoku::sudoku(std::string _filename)
 {
     board = std::vector<std::vector<int>>(9, std::vector<int>(9, 0));
-    std::vector<int> flatboard = buildFlatBoard(_filename);
-    buildBoard(flatboard);
+    buildBoard(_filename);
 }
 
-void sudoku::buildBoard(std::vector<int> flatboard)
-{
-    int count = 0;
-    for (int i = 0; i < 9; i++)
-    {
-        for (int j = 0; j < 9; j++)
-        {
-            board[i][j] = flatboard[count++];
-        }
-    }
-}
-
-std::vector<int> sudoku::buildFlatBoard(std::string _fileName)
+void sudoku::buildBoard(std::string _fileName)
 {
     std::vector<int> flatboard = std::vector<int>(81, 0);
     std::ifstream inputFile(_fileName);
@@ -33,16 +20,12 @@ std::vector<int> sudoku::buildFlatBoard(std::string _fileName)
     }
     std::stringstream ss;
     ss << inputFile.rdbuf();
-    std::string fileContents = ss.str();
-    int count = 0;
-    while (ss.good())
-    {
-        std::string substr;
-        std::getline(ss, substr, ' ');
-        flatboard[count++] = std::stoi(substr);
+    
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9; ++j) {
+            ss >> board[i][j];
+        }
     }
-
-    return flatboard;
 }
 
 void sudoku::print()
