@@ -7,12 +7,13 @@
 class sudoku {
     public:
         sudoku(std::string);
-    //     void print();
-    //     void solve();
-    //     friend std::ostream& operator<<(std::ostream&, const sudoku&);
-    // private:
-    //     int board [9][9];
-    //     std::string filename;
+        void print();
+        void solve();
+        friend std::ostream& operator<<(std::ostream&, const sudoku&);
+    private:
+        int board [9][9];
+        std::string filename;
+        int flatboard[81] = {};
 };
 
 #endif

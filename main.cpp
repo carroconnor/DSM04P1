@@ -7,6 +7,7 @@
 */
 
 int main(){
-    sudoku test("");
+    sudoku test("sudoku.txt");
+    std::cout << test;
     return 0;
 }
