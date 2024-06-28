@@ -64,8 +64,9 @@ void sudoku::solveSudoku()
     }
 
     bool result = solve(board, 0, 0, row_contains, col_contains, cell_contains);
-    std::cout << "Solved: " << result << std::endl;
-    int x = 0;
+    if(!result){
+        std::cout << "No solution exists for the given Sudoku." << std::endl;
+    }
 }
 
 bool sudoku::solve(std::vector<std::vector<int>> &board, int const row_start, int const col_start, std::array<std::bitset<9>, 9> &row_contains, std::array<std::bitset<9>, 9> &col_contains, std::array<std::bitset<9>, 9> &cell_contains)
