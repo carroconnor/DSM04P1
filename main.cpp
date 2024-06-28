@@ -7,9 +7,9 @@
 */
 
 int main(){
-    sudoku test("sudoku.txt");
-    test.print();
-    test.solveSudoku();
-    test.print();
+    sudoku sud("sudoku.txt");
+    sud.print();
+    sud.solveSudoku();
+    sud.print();
     return 0;
 }
