@@ -71,8 +71,9 @@ void sudoku::solveSudoku()
 bool sudoku::solve(std::vector<std::vector<int>> &board, int const row_start, int const col_start, std::array<std::bitset<9>, 9> &row_contains, std::array<std::bitset<9>, 9> &col_contains, std::array<std::bitset<9>, 9> &cell_contains)
 {
     //find the next empty cell
-    auto [row, col] = next_empty(board, row_start, col_start);
-
+    std::pair<int, int> pair = next_empty(board, row_start, col_start);
+    int row = pair.first;
+    int col = pair.second;
     if (row == 9)
     {
         return true;
