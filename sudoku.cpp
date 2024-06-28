@@ -36,7 +36,7 @@ void sudoku::print()
         {
             std::cout << board[i][j] << " ";
         }
-        std::cout << std::endl;
+        //std::cout << std::endl; removed to match unit tests
     }
 }
 
@@ -146,7 +146,7 @@ std::ostream &operator<<(std::ostream &output, const sudoku &sud)
         {
             output << sud.board[i][j] << " ";
         }
-        output << std::endl;
+        //output << std::endl; removed to match unit tests
     }
     return output;
 }
